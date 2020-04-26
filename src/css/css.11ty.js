@@ -37,6 +37,7 @@ module.exports = class {
         });
     }
 
+    // autoprefixer + flexbugs fixes in production
     async process(css) {
         return new Promise((resolve, reject) => {
             if (!isProd) {
