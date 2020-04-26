@@ -1,0 +1,13 @@
+{%- set absolutePageUrl -%}{{ page.url | url | absoluteUrl(meta.url) }}{%- endset -%}
+<meta name="description" content="{{ description or meta.description }}">
+<link rel="canonical" href="{{ absolutePageUrl }}">
+<link rel="alternate" href="{{ meta.url }}/feed.xml" type="application/atom+xml" title="{{ meta.title }}">
+<meta property="og:site_name" content="{{ meta.title }}">
+<meta property="og:title" content="{{ title or meta.title }}">
+<meta property="og:description" content="{{ description  or meta.description }}">
+<meta property="og:url" content="{{ absolutePageUrl }}">
+<meta property="og:locale" content="{{ meta.locale }}">
+<meta name="twitter:card" content="{% if image -%}summary_large_image{% else %}summary{% endif %}">
+{%- if image -%}
+    <meta property="og:image" content="{{ image | url | absoluteUrl(meta.url) }}">
+{%- endif -%}

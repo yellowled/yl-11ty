@@ -1,0 +1,163 @@
+// BUTTONS
+// --------------------------------------------------------------------
+$button-radius: 4px !default;
+$button-focus: #06f !default;
+$button-padding: 0.1875rem 0.625rem !default;
+
+@mixin gradient-button(
+    $bg-color: #ddd,
+    $fg-color: #000,
+    $radius: $button-radius
+) {
+    background-clip: padding-box;
+    background-color: lighten($bg-color, 13.2%);
+    background-image: linear-gradient(
+        to bottom,
+        lighten($bg-color, 13.2%),
+        $bg-color
+    );
+    border: 1px solid;
+    border-color: $bg-color darken($bg-color, 13.2%) darken($bg-color, 26.5%);
+    border-radius: $radius;
+    color: $fg-color;
+    display: inline-block;
+    line-height: normal;
+    outline: 0;
+    padding: $padding;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: invert($fg-color) 0 1px 1px;
+    width: auto;
+
+    &:hover {
+        background-color: lighten($bg-color, 13.2%);
+        background-image: linear-gradient(
+            to bottom,
+            lighten($bg-color, 13.2%),
+            darken($bg-color, 6.5%)
+        );
+    }
+
+    &:active {
+        background-color: lighten($bg-color, 13.2%);
+        background-image: linear-gradient(
+            to bottom,
+            lighten($bg-color, 13.2%),
+            darken($bg-color, 6.5%)
+        );
+        border-color: darken($bg-color, 26.5%) darken($bg-color, 13.2%)
+            $bg-color;
+        box-shadow: inset rgba(#000, 0.25) 0 1px 2px 0;
+    }
+
+    &:focus {
+        box-shadow: $button-focus 0 0 5px 0;
+        z-index: 1;
+    }
+
+    &:active,
+    &:visited,
+    &:hover,
+    &:focus {
+        color: $fg-color;
+    }
+}
+
+@mixin flat-button(
+    $bg-color: #ddd,
+    $fg-color: #000,
+    $radius: $button-radius,
+    $alt-color: complement($bg-color)
+) {
+    background: $bg-color;
+    background-clip: padding-box;
+    border: 1px solid $bg-color;
+    border-radius: $radius;
+    color: $fg-color;
+    display: inline-block;
+    line-height: normal;
+    outline: 0;
+    padding: $button-padding;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: none;
+    width: auto;
+
+    &:active,
+    &:hover,
+    &:focus {
+        background: $alt-color;
+        border-color: $alt-color;
+        color: $fg-color;
+    }
+
+    &:focus {
+        box-shadow: none;
+        z-index: auto;
+    }
+}
+
+@mixin border-button(
+    $fg-color: #000,
+    $alt-color: #fff,
+    $border-width: 1px,
+    $radius: $button-radius
+) {
+    background: transparent;
+    background-clip: padding-box;
+    border: $border-width solid $fg-color;
+    border-radius: $radius;
+    color: $fg-color;
+    display: inline-block;
+    line-height: normal;
+    outline: 0;
+    padding: $button-padding;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: none;
+    width: auto;
+
+    &:active,
+    &:hover,
+    &:focus {
+        background: $fg-color;
+        color: $alt-color;
+    }
+
+    &:focus {
+        box-shadow: none;
+        z-index: auto;
+    }
+}
+
+@mixin unstyled-button(
+    $fg-color: #000,
+    $bg-color: transparent,
+    $alt-color: #000
+) {
+    background: transparent;
+    background-clip: padding-box;
+    border: 0;
+    border-radius: 0;
+    color: $fg-color;
+    display: inline-block;
+    line-height: normal;
+    outline: 0;
+    padding: 0;
+    text-align: left;
+    text-decoration: none;
+    text-shadow: none;
+    width: auto;
+
+    &:active,
+    &:hover,
+    &:focus {
+        background: $bg-color;
+        color: $alt-color;
+    }
+
+    &:focus {
+        box-shadow: none;
+        z-index: auto;
+    }
+}

@@ -1,0 +1,98 @@
+// TYPOGRAPHY
+// --------------------------------------------------------------------
+$font-path: '../fonts/' !default;
+$full-font-features: 'frac' 1, 'kern' 1, 'swsh' 1 !default;
+$full-font-ligatures: common-ligatures discretionary-ligatures
+    historical-ligatures contextual !default;
+$quote-source: '> footer' !default;
+
+// Self-hosted webfonts
+@mixin webfont(
+    $family,
+    $src,
+    $style: normal,
+    $weight: normal,
+    $path: $font-path
+) {
+    @font-face {
+        font-family: $family;
+        font-style: $style;
+        font-weight: $weight;
+        src: url('#{$path}#{$src}.woff2') format('woff2'),
+            url('#{$path}#{$src}.woff') format('woff');
+    }
+}
+
+// blog.fontdeck.com/post/15777165734/opentype-1
+@mixin ligatures(
+    $font-features: $full-font-features,
+    $font-ligatures: $full-font-ligatures
+) {
+    font-feature-settings: $font-features;
+    font-variant-ligatures: $font-ligatures;
+}
+
+// html5doctor.com/blockquote-q-cite/
+@mixin smart-blockquotes {
+    p {
+        quotes: '“' '”';
+    }
+
+    p::before {
+        content: '';
+        content: no-open-quote;
+    }
+
+    p::after {
+        content: '';
+        content: no-close-quote;
+    }
+
+    p:first-of-type::before {
+        content: '“';
+        content: open-quote;
+    }
+
+    p:last-of-type::after {
+        content: '”';
+        content: close-quote;
+    }
+
+    :lang(de) & p,
+    &:lang(de) p {
+        quotes: '„' '“';
+    }
+
+    :lang(de) & p::before,
+    &:lang(de) p::before {
+        content: '';
+        content: no-open-quote;
+    }
+
+    :lang(de) & p::after,
+    &:lang(de) p::after {
+        content: '';
+        content: no-close-quote;
+    }
+
+    :lang(de) & p:first-of-type::before,
+    &:lang(de) p:first-of-type::before {
+        content: '„';
+        content: open-quote;
+    }
+
+    :lang(de) & p:last-of-type::after,
+    &:lang(de) p:last-of-type::after {
+        content: '“';
+        content: close-quote;
+    }
+
+    // Quote source attribution
+    #{$quote-source} {
+        display: block;
+
+        &::before {
+            content: '– ';
+        }
+    }
+}

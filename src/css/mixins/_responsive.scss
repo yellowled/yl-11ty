@@ -1,0 +1,51 @@
+// RESPONSIVE HELPERS
+// --------------------------------------------------------------------
+// github.com/suitcss/components-flex-embed
+@mixin responsive-object($ratio: 16by9) {
+    display: block;
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+
+    @if $ratio == 16by9 {
+        padding-bottom: 56.25%;
+    } @else if $ratio == 4by3 {
+        padding-bottom: 75%;
+    }
+
+    iframe,
+    embed,
+    object,
+    video {
+        border: 0;
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}
+
+// mixin needs to be applied to a div containing the table
+@mixin responsive-table($breakpoint: 576px) {
+    min-height: 0.01%;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    th,
+    td {
+        white-space: nowrap;
+    }
+
+    @media screen and (min-width: $breakpoint) {
+        overflow-y: auto;
+
+        th,
+        td {
+            white-space: normal;
+        }
+    }
+}
