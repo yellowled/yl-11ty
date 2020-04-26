@@ -1,6 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 const sass = require('node-sass');
+const postcss = require('postcss');
+const autoprefixer = require('autoprefixer');
+const flexbugs = require('postcss-flexbugs-fixes');
 const CleanCSS = require('clean-css');
 const cssesc = require('cssesc');
 
@@ -31,6 +34,20 @@ module.exports = class {
                 }
                 resolve(result.css.toString());
             });
+        });
+    }
+
+    async process(css) {
+        return new Promise((resolve, reject) => {
+            if (!isProd) {
+                resolve(css);
+            }
+            const processed = postcss([
+                autoprefixer({ grid: true }),
+                flexbugs(),
+            ]).process(css);
+
+            resolve(processed.toString());
         });
     }
 
@@ -96,7 +113,8 @@ module.exports = class {
     async render({ entryPath }) {
         try {
             const css = await this.compile({ file: entryPath });
-            const result = await this.minify(css);
+            const post = await this.process(css);
+            const result = await this.minify(post);
             return result;
         } catch (err) {
             if (isProd) {
