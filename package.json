@@ -1,8 +1,16 @@
 {
     "name": "yl-11ty",
-    "version": "0.0.1",
-    "description": "",
-    "main": "index.js",
+    "description": "My eleventy starter kit",
+    "version": "0.9.0",
+    "author": "Matthias Mees",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:yellowled/yl-11ty.git"
+    },
+    "engines": {
+        "node": ">=10.0.0"
+    },
     "scripts": {
         "start": "npm run dev",
         "build": "run-s clean eleventy:prod --print-label",
@@ -12,9 +20,6 @@
         "eleventy:prod": "ELEVENTY_ENV=production eleventy",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "keywords": [],
-    "author": "Matthias Mees <mm@yellowled.de> (https://github.com/yellowled)",
-    "license": "MIT",
     "devDependencies": {
         "@11ty/eleventy": "^0.10.0",
         "@11ty/eleventy-plugin-rss": "^1.0.7",
