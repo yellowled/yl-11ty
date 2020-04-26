@@ -1,7 +1,7 @@
 {
     "name": "yl-11ty",
-    "version": "0.9.0",
-    "description": "My eleventy starter kit",
+    "version": "1.0.0",
+    "description": "An 11ty starter kit",
     "scripts": {
         "start": "npm run dev",
         "build": "run-s clean eleventy:prod --print-label",
