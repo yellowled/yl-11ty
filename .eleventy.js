@@ -1,8 +1,8 @@
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 
-const filters = require('./utils/filters');
-const shortcodes = require('./utils/shortcodes');
-const transforms = require('./utils/transforms');
+const filters = require('./src/_11ty/filters');
+const shortcodes = require('./src/_11ty/shortcodes');
+const transforms = require('./src/_11ty/transforms');
 
 module.exports = function (config) {
     // Plugins
