@@ -1,4 +1,3 @@
-const fs = require('fs');
 const path = require('path');
 const sass = require('node-sass');
 const postcss = require('postcss');
@@ -14,7 +13,7 @@ module.exports = class {
     async data() {
         const entryPath = path.join(__dirname, `/${ENTRY_FILE_NAME}`);
         return {
-            permalink: `/css/main.css`,
+            permalink: '/css/main.css',
             eleventyExcludeFromCollections: true,
             entryPath,
         };
@@ -39,7 +38,7 @@ module.exports = class {
 
     // autoprefixer + flexbugs fixes in production
     async process(css) {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             if (!isProd) {
                 resolve(css);
             }

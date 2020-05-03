@@ -1,4 +1,2 @@
 dist
 node_modules
-*.11ty.js
-src/_11ty/*.js
