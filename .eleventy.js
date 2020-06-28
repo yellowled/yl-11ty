@@ -28,7 +28,6 @@ module.exports = function (config) {
     config.addWatchTarget('./src/js');
 
     // Pass-through copy files
-    config.addPassthroughCopy('src/site.webmanifest');
     config.addPassthroughCopy('src/favicons');
 
     // Deep-merge data
