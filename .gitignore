@@ -1,5 +1,5 @@
 .DS_Store
 .env
 .vscode
-dist
+_site
 node_modules

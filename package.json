@@ -6,7 +6,7 @@
         "start": "npm run dev",
         "build": "run-s clean eleventy:prod --print-label",
         "dev": "run-s clean eleventy:dev --print-label",
-        "clean": "del-cli dist",
+        "clean": "del-cli _site",
         "eleventy:dev": "ELEVENTY_ENV=development eleventy --serve",
         "eleventy:prod": "ELEVENTY_ENV=production eleventy",
         "lint": "run-s lint:js lint:scss --print-label",
