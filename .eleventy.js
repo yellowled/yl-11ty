@@ -27,9 +27,6 @@ module.exports = function (config) {
     config.addWatchTarget('./src/css');
     config.addWatchTarget('./src/js');
 
-    // Layout aliases
-    config.addLayoutAlias('default', 'default.njk');
-
     // Pass-through copy files
     config.addPassthroughCopy('src/site.webmanifest');
     config.addPassthroughCopy('src/favicons');
