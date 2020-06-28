@@ -31,7 +31,6 @@ module.exports = function (config) {
     config.addLayoutAlias('default', 'default.njk');
 
     // Pass-through copy files
-    config.addPassthroughCopy('src/robots.txt');
     config.addPassthroughCopy('src/site.webmanifest');
     config.addPassthroughCopy('src/favicons');
 
