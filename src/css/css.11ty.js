@@ -1,5 +1,5 @@
 const path = require('path');
-const sass = require('node-sass');
+const sass = require('sass');
 const postcss = require('postcss');
 const autoprefixer = require('autoprefixer');
 const flexbugs = require('postcss-flexbugs-fixes');
@@ -27,6 +27,8 @@ module.exports = class {
                 config.sourceMapEmbed = true;
                 config.outputStyle = 'expanded';
             }
+            // if this becomes a performance issue, use renderSync()
+            // https://sass-lang.com/documentation/js-api
             return sass.render(config, (err, result) => {
                 if (err) {
                     return reject(err);
