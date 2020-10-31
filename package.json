@@ -4,12 +4,12 @@
     "description": "An 11ty starter kit",
     "scripts": {
         "start": "npm run dev",
-        "build": "run-s clean eleventy:prod --print-label",
-        "dev": "run-s clean eleventy:dev --print-label",
+        "build": "run-s clean eleventy:prod",
+        "dev": "run-s clean eleventy:dev",
         "clean": "del-cli _site",
         "eleventy:dev": "ELEVENTY_ENV=development eleventy --serve",
         "eleventy:prod": "ELEVENTY_ENV=production eleventy",
-        "lint": "run-s lint:js lint:scss --print-label",
+        "lint": "run-s lint:js lint:scss",
         "lint:js": "eslint src/js/**/*",
         "lint:scss": "stylelint --syntax scss src/css/**/*.scss",
         "test": "echo \"Error: no test specified\" && exit 1"
