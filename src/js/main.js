@@ -1,3 +1,7 @@
-import jsReady from './util/jsReady';
+import whenDomReady from 'when-dom-ready';
 
-jsReady();
+import { jsReady } from './util/jsReady';
+
+whenDomReady(() => {
+    jsReady();
+});
