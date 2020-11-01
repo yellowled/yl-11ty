@@ -23,12 +23,9 @@ module.exports = function (config) {
         config.addTransform(transformName, transforms[transformName]);
     });
 
-    // Additional watch targets
-    config.addWatchTarget('./src/css');
-    config.addWatchTarget('./src/js');
-
+    // Reload dev server if CSS/JS changes
     config.setBrowserSyncConfig({
-        files: ['_site/css/main.css'],
+        files: ['_site/css/main.css', '_site/js/main.js'],
     });
 
     // Pass-through copy files
