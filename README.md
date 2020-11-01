@@ -12,5 +12,6 @@ Just another [11ty](https://www.11ty.dev) starter kit.
 
 This starter kit would not exist without the work of some very talented people.
 
--   Max Boeck [eleventastic](https://github.com/maxboeck/eleventastic/)
 -   Zach Leatherman [eleventy](https://www.11ty.dev)
+-   Max Boeck [eleventastic](https://github.com/maxboeck/eleventastic/)
+-   Nicolas Hoizey [pack11ty](https://github.com/nhoizey/pack11ty)
