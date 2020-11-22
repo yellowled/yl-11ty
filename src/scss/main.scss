@@ -1,5 +1,5 @@
-@import 'variables';
-@import 'mixins/index';
+@use 'variables';
+@use 'mixins/index';
 
-@import 'elements/reset';
-@import 'elements/forms';
+@use 'elements/reset';
+@use 'elements/forms';

@@ -1,5 +1,5 @@
-// BUTTONS
-// --------------------------------------------------------------------
+@use "sass:color";
+
 $button-radius: 4px !default;
 $button-focus: #06f !default;
 $button-padding: 0.1875rem 0.625rem !default;
@@ -10,14 +10,15 @@ $button-padding: 0.1875rem 0.625rem !default;
     $radius: $button-radius
 ) {
     background-clip: padding-box;
-    background-color: lighten($bg-color, 13.2%);
+    background-color: color.adjust($bg-color, $lightness: 13.2%);
     background-image: linear-gradient(
         to bottom,
-        lighten($bg-color, 13.2%),
+        color.adjust($bg-color, $lightness: 13.2%),
         $bg-color
     );
     border: 1px solid;
-    border-color: $bg-color darken($bg-color, 13.2%) darken($bg-color, 26.5%);
+    border-color: $bg-color color.adjust($bg-color, $lightness: -13.2%)
+        color.adjust($bg-color, $lightness: -26.5%);
     border-radius: $radius;
     color: $fg-color;
     display: inline-block;
@@ -26,27 +27,27 @@ $button-padding: 0.1875rem 0.625rem !default;
     padding: $padding;
     text-align: center;
     text-decoration: none;
-    text-shadow: invert($fg-color) 0 1px 1px;
+    text-shadow: color.invert($fg-color) 0 1px 1px;
     width: auto;
 
     &:hover {
-        background-color: lighten($bg-color, 13.2%);
+        background-color: color.adjust($bg-color, $lightness: 13.2%);
         background-image: linear-gradient(
             to bottom,
-            lighten($bg-color, 13.2%),
-            darken($bg-color, 6.5%)
+            color.adjust($bg-color, $lightness: 13.2%),
+            color.adjust($bg-color, $lightness: -6.5%)
         );
     }
 
     &:active {
-        background-color: lighten($bg-color, 13.2%);
+        background-color: color.adjust($bg-color, $lightness: 13.2%);
         background-image: linear-gradient(
             to bottom,
-            lighten($bg-color, 13.2%),
-            darken($bg-color, 6.5%)
+            color.adjust($bg-color, $lightness: 13.2%),
+            color.adjust($bg-color, $lightness: -6.5%)
         );
-        border-color: darken($bg-color, 26.5%) darken($bg-color, 13.2%)
-            $bg-color;
+        border-color: color.adjust($bg-color, $lightness: -26.5%)
+            color.adjust($bg-color, $lightness: -13.2%) $bg-color;
         box-shadow: inset rgba(#000, 0.25) 0 1px 2px 0;
     }
 
@@ -67,7 +68,7 @@ $button-padding: 0.1875rem 0.625rem !default;
     $bg-color: #ddd,
     $fg-color: #000,
     $radius: $button-radius,
-    $alt-color: complement($bg-color)
+    $alt-color: color.complement($bg-color)
 ) {
     background: $bg-color;
     background-clip: padding-box;
