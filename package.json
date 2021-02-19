@@ -22,23 +22,23 @@
         "test": "npm-run-all --sequential lint:js lint:scss"
     },
     "dependencies": {
-        "core-js": "^3.8.3",
-        "luxon": "^1.25.0",
+        "core-js": "^3.9.0",
+        "luxon": "^1.26.0",
         "when-dom-ready": "^1.2.12"
     },
     "devDependencies": {
         "@11ty/eleventy": "^0.11.1",
         "@11ty/eleventy-navigation": "^0.1.6",
         "@11ty/eleventy-plugin-rss": "^1.1.0",
-        "@babel/core": "^7.12.16",
-        "@babel/preset-env": "^7.12.16",
-        "@rollup/plugin-babel": "^5.2.3",
+        "@babel/core": "^7.12.17",
+        "@babel/preset-env": "^7.12.17",
+        "@rollup/plugin-babel": "^5.3.0",
         "@rollup/plugin-commonjs": "^17.1.0",
-        "@rollup/plugin-node-resolve": "^11.1.1",
+        "@rollup/plugin-node-resolve": "^11.2.0",
         "autoprefixer": "^10.2.4",
         "cssnano": "^4.1.10",
         "del-cli": "^3.0.1",
-        "eslint": "^7.19.0",
+        "eslint": "^7.20.0",
         "eslint-config-prettier": "^7.2.0",
         "eslint-plugin-prettier": "^3.3.1",
         "html-minifier": "^4.0.0",
@@ -48,7 +48,7 @@
         "postcss-flexbugs-fixes": "^5.0.2",
         "prettier": "^2.2.1",
         "rollup": "^2.39.0",
-        "sass": "^1.32.7",
+        "sass": "^1.32.8",
         "stylelint": "^13.10.0",
         "stylelint-config-prettier": "^8.0.2",
         "stylelint-config-recommended-scss": "^4.2.0",
@@ -59,7 +59,7 @@
     "author": "Matthias Mees",
     "license": "MIT",
     "engines": {
-        "node": "^15"
+        "node": ">=15"
     },
     "repository": {
         "type": "git",
