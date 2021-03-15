@@ -1,4 +1,4 @@
-@use 'buttons';
-@use 'helpers';
-@use 'responsive';
-@use 'typography';
+@forward 'buttons';
+@forward 'helpers';
+@forward 'responsive';
+@forward 'typography';

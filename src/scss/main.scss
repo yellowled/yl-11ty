@@ -1,5 +1,3 @@
 @use 'variables';
-@use 'mixins/index';
-
-@use 'elements/reset';
-@use 'elements/forms';
+@use 'mixins';
+@use 'elements';
