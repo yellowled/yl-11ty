@@ -1,19 +1,19 @@
-$classname-wrapper: form-control !default;
-$classname-select: form-select !default;
-$classname-checkradio: form-check !default;
+$wrapper: form-control !default;
+$select: form-select !default;
+$checkradio: form-check !default;
 
-$input-bg: #fff !default;
-$input-fg: #495057 !default;
-$input-placeholder: #6c757d !default;
-$input-border-radius: 0.25rem !default;
-$input-border-type: 1px solid !default;
-$input-border-color: #ced4da !default;
-$input-check-bg: #0d6efd !default;
-$input-check-size: 1.25em !default;
-$input-focus: #8bbafe !default;
-$input-focus-shadow: 0 0 0 0.2rem rgba($input-check-bg, 0.25) !default;
-$input-disabled-bg: #e9ecef !default;
-$input-disabled-fg: #6c757d !default;
+$bg: #fff !default;
+$fg: #495057 !default;
+$placeholder-fg: #6c757d !default;
+$border-radius: 0.25rem !default;
+$border-type: 1px solid !default;
+$border-color: #ced4da !default;
+$check-bg: #0d6efd !default;
+$check-size: 1.25em !default;
+$focus-border-color: #8bbafe !default;
+$focus-shadow: 0 0 0 0.2rem rgba($check-bg, 0.25) !default;
+$disabled-bg: #e9ecef !default;
+$disabled-fg: #6c757d !default;
 
 label {
     display: inline-block;
@@ -139,12 +139,12 @@ legend {
     font: inherit;
 }
 
-.#{$classname-wrapper} {
+.#{$wrapper} {
     background-clip: padding-box;
-    background-color: $input-bg;
-    border-radius: $input-border-radius;
-    border: $input-border-type $input-border-color;
-    color: $input-fg;
+    background-color: $bg;
+    border-radius: $border-radius;
+    border: $border-type $border-color;
+    color: $fg;
     display: block;
     font-size: 1rem;
     font-weight: 400;
@@ -164,53 +164,53 @@ legend {
     }
 
     &::-webkit-input-placeholder {
-        color: $input-placeholder;
+        color: $placeholder-fg;
         opacity: 1;
     }
 
     &::-moz-placeholder {
-        color: $input-placeholder;
+        color: $placeholder-fg;
         opacity: 1;
     }
 
     &::-ms-input-placeholder {
-        color: $input-placeholder;
+        color: $placeholder-fg;
         opacity: 1;
     }
 
     &:-ms-input-placeholder {
-        color: $input-placeholder;
+        color: $placeholder-fg;
         opacity: 1;
     }
 
     &::placeholder {
-        color: $input-placeholder;
+        color: $placeholder-fg;
         opacity: 1;
     }
 
     &:focus {
-        background-color: $input-bg;
-        border-color: $input-focus;
-        box-shadow: $input-focus-shadow;
-        color: $input-fg;
+        background-color: $bg;
+        border-color: $focus-border-color;
+        box-shadow: $focus-shadow;
+        color: $fg;
         outline: 0;
     }
 
     &:disabled,
     &[readonly] {
-        background-color: $input-disabled-bg;
+        background-color: $disabled-bg;
         opacity: 1;
     }
 }
 
-.#{$classname-select} {
+.#{$select} {
     appearance: none;
-    background: $input-bg
+    background: $bg
         url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e")
         no-repeat right 0.75rem center/16px 12px;
-    border-radius: $input-border-radius;
-    border: $input-border-type $input-border-color;
-    color: $input-fg;
+    border-radius: $border-radius;
+    border: $border-type $border-color;
+    color: $fg;
     display: inline-block;
     font-size: 1rem;
     font-weight: 400;
@@ -223,14 +223,14 @@ legend {
     -moz-appearance: none;
 
     &:focus {
-        border-color: $input-focus;
-        box-shadow: $input-focus-shadow;
+        border-color: $focus-border-color;
+        box-shadow: $focus-shadow;
         outline: 0;
     }
 
     &:focus::-ms-value {
-        background-color: $input-bg;
-        color: $input-fg;
+        background-color: $bg;
+        color: $fg;
     }
 
     &[multiple],
@@ -241,8 +241,8 @@ legend {
     }
 
     &:disabled {
-        background-color: $input-disabled-bg;
-        color: $input-disabled-fg;
+        background-color: $disabled-bg;
+        color: $disabled-fg;
     }
 
     &::-ms-expand {
@@ -251,11 +251,11 @@ legend {
 
     &:-moz-focusring {
         color: transparent;
-        text-shadow: 0 0 0 $input-fg;
+        text-shadow: 0 0 0 $fg;
     }
 }
 
-.#{$classname-checkradio} {
+.#{$checkradio} {
     display: block;
     margin-bottom: 0.125rem;
     min-height: 1.5rem;
@@ -267,18 +267,18 @@ legend {
 
     input {
         appearance: none;
-        background-color: $input-bg;
-        border: $input-border-type $input-border-color;
+        background-color: $bg;
+        border: $border-type $border-color;
         float: left;
-        height: $input-check-size;
+        height: $check-size;
         margin-top: 0.125em;
         margin-left: -1.75em;
-        width: $input-check-size;
+        width: $check-size;
         -webkit-appearance: none;
         -moz-appearance: none;
 
         &[type='checkbox'] {
-            border-radius: $input-border-radius;
+            border-radius: $border-radius;
         }
 
         &[type='radio'] {
@@ -291,17 +291,17 @@ legend {
         }
 
         &:focus {
-            border-color: $input-focus;
-            box-shadow: $input-focus-shadow;
+            border-color: $focus-border-color;
+            box-shadow: $focus-shadow;
             outline: 0;
         }
 
         &:checked {
-            background-color: $input-check-bg;
+            background-color: $check-bg;
             background-repeat: no-repeat;
             background-position: center center;
             background-size: 1em;
-            border-color: $input-check-bg;
+            border-color: $check-bg;
 
             &[type='checkbox'] {
                 background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M4 8.5L6.5 11l6-6'/%3e%3c/svg%3e");

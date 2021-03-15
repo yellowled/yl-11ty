@@ -1,17 +1,11 @@
-$font-path: '../fonts/' !default;
-$full-font-features: 'frac' 1, 'kern' 1, 'swsh' 1 !default;
-$full-font-ligatures: common-ligatures discretionary-ligatures
-    historical-ligatures contextual !default;
-$quote-source: '> footer' !default;
+$dir: '../fonts/' !default;
+$features: 'frac' 1, 'kern' 1, 'swsh' 1 !default;
+$ligatures: common-ligatures discretionary-ligatures historical-ligatures
+    contextual !default;
+$source: '> footer' !default;
 
 // Self-hosted webfonts
-@mixin webfont(
-    $family,
-    $src,
-    $style: normal,
-    $weight: normal,
-    $path: $font-path
-) {
+@mixin webfont($family, $src, $style: normal, $weight: normal, $path: $dir) {
     @font-face {
         font-family: $family;
         font-style: $style;
@@ -22,10 +16,7 @@ $quote-source: '> footer' !default;
 }
 
 // blog.fontdeck.com/post/15777165734/opentype-1
-@mixin ligatures(
-    $font-features: $full-font-features,
-    $font-ligatures: $full-font-ligatures
-) {
+@mixin ligatures($font-features: $features, $font-ligatures: $ligatures) {
     font-feature-settings: $font-features;
     font-variant-ligatures: $font-ligatures;
 }
@@ -86,7 +77,7 @@ $quote-source: '> footer' !default;
     }
 
     // Quote source attribution
-    #{$quote-source} {
+    #{$source} {
         display: block;
 
         &::before {

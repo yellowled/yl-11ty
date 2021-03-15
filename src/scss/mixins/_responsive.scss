@@ -1,5 +1,5 @@
 // github.com/suitcss/components-flex-embed
-@mixin responsive-object($ratio: 16by9) {
+@mixin object($ratio: 16by9) {
     display: block;
     height: 0;
     overflow: hidden;
@@ -27,7 +27,7 @@
 }
 
 // mixin needs to be applied to a div containing the table
-@mixin responsive-table($breakpoint: 576px) {
+@mixin table($breakpoint: 576px) {
     min-height: 0.01%;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     overflow-x: auto;
