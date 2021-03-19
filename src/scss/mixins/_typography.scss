@@ -1,8 +1,8 @@
+$attribution: '> footer' !default;
 $dir: '../fonts/' !default;
 $features: 'frac' 1, 'kern' 1, 'swsh' 1 !default;
 $ligatures: common-ligatures discretionary-ligatures historical-ligatures
     contextual !default;
-$source: '> footer' !default;
 
 // Self-hosted webfonts
 @mixin webfont($family, $src, $style: normal, $weight: normal, $path: $dir) {
@@ -77,7 +77,7 @@ $source: '> footer' !default;
     }
 
     // Quote source attribution
-    #{$source} {
+    #{$attribution} {
         display: block;
 
         &::before {
