@@ -22,7 +22,7 @@
         "test": "npm-run-all --sequential lint:js lint:scss"
     },
     "dependencies": {
-        "core-js": "^3.15.1",
+        "core-js": "^3.15.2",
         "luxon": "^1.27.0",
         "when-dom-ready": "^1.2.12"
     },
@@ -38,7 +38,7 @@
         "autoprefixer": "^10.2.6",
         "cssnano": "^5.0.6",
         "del-cli": "^4.0.0",
-        "eslint": "^7.29.0",
+        "eslint": "^7.30.0",
         "eslint-config-prettier": "^8.3.0",
         "eslint-plugin-prettier": "^3.4.0",
         "html-minifier": "^4.0.0",
@@ -46,20 +46,20 @@
         "postcss": "^8.3.5",
         "postcss-cli": "^8.3.1",
         "postcss-flexbugs-fixes": "^5.0.2",
-        "prettier": "^2.3.1",
-        "rollup": "^2.52.3",
+        "prettier": "^2.3.2",
+        "rollup": "^2.52.7",
         "sass": "^1.35.1",
         "stylelint": "^13.13.1",
         "stylelint-config-prettier": "^8.0.2",
         "stylelint-config-recommended-scss": "^4.2.0",
         "stylelint-config-standard": "^22.0.0",
         "stylelint-scss": "^3.19.0",
-        "terser": "^5.7.0"
+        "terser": "^5.7.1"
     },
     "author": "Matthias Mees",
     "license": "MIT",
     "engines": {
-        "node": ">=15"
+        "node": ">=16"
     },
     "repository": {
         "type": "git",
